@@ -20,6 +20,11 @@ public class Main extends Object {
             marks[i] = scanner.nextInt();
         }
 
+        Printer.print("Student's marks: ");
+        for (int i = 0; i < marks.length; i++) {
+            System.out.print(marks[i] + " ");
+        }
+
         double avg = Manager.calcAvgMark(marks);
 
         String result = String.format("\nStudent's average mark = %.2f", avg);
