@@ -5,7 +5,7 @@ import by.kursy.vikvik.javalessons.view.Printer;
 
 import java.util.Scanner;
 
-public class Main extends Object {
+public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -21,9 +21,7 @@ public class Main extends Object {
         }
 
         Printer.print("Student's marks: ");
-        for (int i = 0; i < marks.length; i++) {
-            System.out.print(marks[i] + " ");
-        }
+        Printer.print(java.util.Arrays.toString(marks));
 
         double avg = Manager.calcAvgMark(marks);
 
