@@ -15,12 +15,11 @@ public class LinearSearching {
 //    }
 
     public static boolean checkValue(int[] array, int value) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == value) {
+        for (int element : array) {
+            if (element == value) {
                 return true;
             }
         }
-
         return false;
     }
 
@@ -84,11 +83,11 @@ public class LinearSearching {
         return -1;
     }
 
-    public static int countValue(int[] array, int value){
+    public static int countValue(int[] array, int value) {
         int count = 0;
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == value) {
+        for (int element : array) {
+            if (element == value) {
                 count++;
             }
         }
