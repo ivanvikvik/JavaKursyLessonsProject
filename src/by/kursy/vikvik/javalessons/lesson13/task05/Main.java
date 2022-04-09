@@ -22,8 +22,11 @@ public class Main {
 //        }
 
         for (int temp : array) {
-            System.out.print(temp + " ");
+            temp *= 2;
         }
 
+        for (int temp : array) {
+            System.out.print(temp + " ");
+        }
     }
 }
