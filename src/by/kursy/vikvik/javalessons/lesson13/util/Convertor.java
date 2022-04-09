@@ -2,12 +2,12 @@ package by.kursy.vikvik.javalessons.lesson13.util;
 
 public class Convertor {
     public static String convertFromArrayToString(int[] array) {
-        String result = "";
+        StringBuilder builder = new StringBuilder();
 
-        for (int i = 0; i < array.length; i++) {
-            result += array[i] + " ";
+        for(int element : array){
+            builder.append(element).append(" ");
         }
 
-        return result;
+        return builder + "";
     }
 }
