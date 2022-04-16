@@ -1,4 +1,4 @@
-package by.kursy.vikvik.javalessons.lesson14.task01;
+package by.kursy.vikvik.javalessons.lesson14.task02;
 
 import by.kursy.vikvik.javalessons.lesson14.ArraySorter;
 import by.kursy.vikvik.javalessons.view.Printer;
@@ -11,12 +11,13 @@ public class Main {
 //        int[] array = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
         int[] array = {1, 2, 3, 10, 3, 5, 6, 7, 8, 9};
 
+
         Printer.print("Before sorting: ");
         Printer.print(Arrays.toString(array));
 
-        ArraySorter.bubbleSortAcs(array);
+        ArraySorter.insertedSortAsc(array);
 
-        Printer.print("\nAfter sorting: ");
+        Printer.print("After sorting: ");
         Printer.print(Arrays.toString(array));
 
     }

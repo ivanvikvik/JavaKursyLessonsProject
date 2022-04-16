@@ -2,6 +2,7 @@ package by.kursy.vikvik.javalessons.lesson14;
 
 public class ArraySorter {
     public static void bubbleSortAcs(int[] array) {
+        int count = 0;
         for (int j = 0; j < array.length - 1; j++) {
             boolean flag = true;
 
@@ -12,12 +13,15 @@ public class ArraySorter {
                     array[i + 1] = t;
                     flag = false;
                 }
+                count++;
             }
 
             if (flag) {
                 break;
             }
         }
+        System.out.println("\nCount = " + count);
+
     }
 
     public static void bubbleSortDecs(int[] array) {
@@ -37,5 +41,23 @@ public class ArraySorter {
                 break;
             }
         }
+    }
+
+    public static void insertedSortAsc(int[] array) {
+        int count = 0;
+        for (int i = 1; i < array.length; i++) {
+            int element = array[i];
+            int j = i - 1;
+
+            while (j >= 0 && array[j] > element) {
+                array[j + 1] = array[j];
+                j--;
+                count++;
+            }
+
+            array[j + 1] = element;
+        }
+
+        System.out.println("\nCount = " + count);
     }
 }
