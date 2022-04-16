@@ -4,6 +4,7 @@ import by.kursy.vikvik.javalessons.lesson14.ArraySorter;
 import by.kursy.vikvik.javalessons.view.Printer;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class Main {
 
         Printer.print("After sorting: ");
         Printer.print(Arrays.toString(array));
+
 
     }
 }
