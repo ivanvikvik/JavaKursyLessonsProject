@@ -30,6 +30,15 @@ public class Student {
         this.alive = alive;
     }
 
+    // copy-constructor
+    public Student(Student student) {
+        name = student.name;
+        age = student.age;
+        mark = student.mark;
+        sex = student.sex;
+        alive = student.alive;
+    }
+
     public void testing(){
         System.out.println(this.hashCode());
     }
