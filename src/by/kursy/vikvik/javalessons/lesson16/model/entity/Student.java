@@ -1,18 +1,6 @@
 package by.kursy.vikvik.javalessons.lesson16.model.entity;
 
 public class Student {
-    public static int count = 4;
-
-    {
-        this.mark = 4;
-        System.out.println("init block 2");
-    }
-
-
-    {
-        System.out.println("init block 1");
-    }
-
     public String name;
     public int age;
     public double mark;
@@ -20,9 +8,11 @@ public class Student {
     public boolean alive;
 
     public Student() {
+        System.out.println("Create Student object");
     }
 
     public Student(String name, int age, double mark, char sex, boolean alive) {
+        this();
         this.name = name;
         this.age = age;
         this.mark = mark;
@@ -32,11 +22,8 @@ public class Student {
 
     // copy-constructor
     public Student(Student student) {
-        name = student.name;
-        age = student.age;
-        mark = student.mark;
-        sex = student.sex;
-        alive = student.alive;
+        this(student.name, student.age,student.mark,
+                student.sex, student.alive);
     }
 
     public void testing(){

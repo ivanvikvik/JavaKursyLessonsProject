@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         Student st1 = new Student("Alex", 20, 10, 'm', true);
         Student st2 = new Student(st1);
-        Student st3 = new Student(st1);
+        Student st3 = new Student();
 
         System.out.println(st1.getInfo());
         System.out.println(st2.getInfo());
