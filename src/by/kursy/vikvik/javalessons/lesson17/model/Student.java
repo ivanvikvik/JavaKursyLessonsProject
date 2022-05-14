@@ -1,7 +1,7 @@
 package by.kursy.vikvik.javalessons.lesson17.model;
 
 public class Student {
-    String name;
+    protected String name;
 
     public String getName(){
         return name;
