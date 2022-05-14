@@ -1,5 +1,6 @@
 package by.kursy.vikvik.javalessons.lesson17.model;
 
+// final class ???
 public class Student extends Human {
 
     public static final int MIN_STUDENT_AGE = 16;
@@ -10,17 +11,19 @@ public class Student extends Human {
 
     private double mark;
     private boolean alive;
+    private String name;
 
     public Student() {
-        name = "no name";
+        super();
+        System.out.println("called Student default constructor");
+        name = "botan";
         age = 16;
         mark = 4;
         alive = true;
     }
 
     public Student(String name, int age, double mark, boolean alive) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.mark = mark;
         this.alive = alive;
     }
@@ -45,7 +48,7 @@ public class Student extends Human {
 
     @Override
     public String toString() {
-        return name + ": age = " + age
+        return super.toString()
                 + ", mark = " + mark
                 + ", is alive = " + (alive ? "yes" : "no");
     }

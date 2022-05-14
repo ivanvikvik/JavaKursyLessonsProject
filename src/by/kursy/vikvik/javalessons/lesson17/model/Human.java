@@ -5,6 +5,8 @@ public class Human extends Object {
     protected int age;
 
     public Human() {
+        System.out.println("called Human default constructor");
+        name = "no name";
     }
 
     public Human(String name, int age) {
