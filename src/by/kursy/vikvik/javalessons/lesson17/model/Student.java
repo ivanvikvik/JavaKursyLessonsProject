@@ -1,7 +1,7 @@
 package by.kursy.vikvik.javalessons.lesson17.model;
 
 public class Student {
-    private String name;
+    String name;
 
     public String getName(){
         return name;
@@ -21,10 +21,5 @@ public class Student {
 
     public void change(){
         this.name = "Alex";
-    }
-
-    public static void main(String[] args) {
-        Student student = new Student();
-        student.name = "Alex";
     }
 }
