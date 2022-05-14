@@ -12,15 +12,15 @@ public class Student extends Human {
     private boolean alive;
 
     public Student() {
-        setName("no name");
-        setAge(16);
+        name = "no name";
+        age = 16;
         mark = 4;
         alive = true;
     }
 
     public Student(String name, int age, double mark, boolean alive) {
-        setName(name);
-        setAge(age);
+        this.name = name;
+        this.age = age;
         this.mark = mark;
         this.alive = alive;
     }
@@ -45,7 +45,7 @@ public class Student extends Human {
 
     @Override
     public String toString() {
-        return getName() + ": age = " + getAge()
+        return name + ": age = " + age
                 + ", mark = " + mark
                 + ", is alive = " + (alive ? "yes" : "no");
     }

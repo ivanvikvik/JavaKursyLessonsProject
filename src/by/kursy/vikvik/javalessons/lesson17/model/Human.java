@@ -1,8 +1,8 @@
 package by.kursy.vikvik.javalessons.lesson17.model;
 
 public class Human extends Object {
-    private String name;
-    private int age;
+    protected String name;
+    protected int age;
 
     public Human() {
     }
