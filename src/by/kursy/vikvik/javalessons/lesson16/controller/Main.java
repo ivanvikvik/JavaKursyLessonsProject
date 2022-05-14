@@ -16,6 +16,7 @@ public class Main {
         Student st2 = new Student(st1);
         Student st3 = new Student();
 
+
         System.out.println(st1.getInfo());
         System.out.println(st2.getInfo());
         System.out.println(st3.getInfo());
