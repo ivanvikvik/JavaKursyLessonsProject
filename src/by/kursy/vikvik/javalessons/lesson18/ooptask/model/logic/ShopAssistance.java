@@ -65,11 +65,10 @@ public class ShopAssistance {
 
         Flower[] result = new Flower[count];
 
-        int i = 0;
-        for (; i < bouquet.size(); i++) {
+        for (int i = 0, j = 0; i < bouquet.size(); i++) {
             if (bouquet.get(i).getLength() == maxLength) {
-                result[i] = bouquet.get(i);
-                i++;
+                result[j] = bouquet.get(i);
+                j++;
             }
         }
 
