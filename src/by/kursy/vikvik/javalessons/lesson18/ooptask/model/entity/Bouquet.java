@@ -1,55 +1,59 @@
 package by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity;
 
+import java.util.ArrayList;
+
 public class Bouquet {
-    private Flower[] flowers;
+    private ArrayList<Flower> flowers;
 
     public Bouquet() {
-        flowers = new Flower[0];
+        flowers = new ArrayList<>();
     }
 
     public Bouquet(Flower[] flowers) {
         if (flowers != null) {
-            this.flowers = flowers;
+            this.flowers = new ArrayList<>();
+            for (Flower flower : flowers) {
+                this.flowers.add(flower);
+            }
         } else {
             flowers = new Flower[0];
         }
     }
 
     public int size() {
-        return flowers.length;
+        return flowers.size();
     }
 
     public Flower get(int index) {
-        if (index >= 0 && index < flowers.length) {
-            return flowers[index];
+        if (index >= 0 && index < flowers.size()) {
+            return flowers.get(index);
         }
         return null;
     }
 
     public void add(Flower flower) {
-        Flower[] temp = new Flower[flowers.length + 1];
+        ArrayList<Flower> temp = new ArrayList<>();
 
-        int i = 0;
-        for (; i < flowers.length; i++) {
-            temp[i] = flowers[i];
+        for (Flower f : flowers) {
+            temp.add(f);
         }
-        temp[i] = flower;
+
+        temp.add(flower);
         flowers = temp;
     }
 
     public void remove(Flower flower) {
         boolean flag = false;
-        Flower[] temp = new Flower[flowers.length - 1];
+        ArrayList<Flower> temp = new ArrayList<>();
 
-        for (int i = 0, j = 0; i < flowers.length; i++) {
+        for (int i = 0; i < flowers.size(); i++) {
 
-            if (flag || (!flowers[i].getName().equals(flower.getName())
-                    && !flowers[i].getColor().equals(flower.getColor())
-                    && flowers[i].getLength() != flower.getLength()
-                    && flowers[i].getWeight() != flower.getWeight()
-                    && flowers[i].getPrice() != flower.getPrice())) {
-                temp[j] = flowers[i];
-                j++;
+            if (flag || (!flowers.get(i).getName().equals(flower.getName())
+                    && !flowers.get(i).getColor().equals(flower.getColor())
+                    && flowers.get(i).getLength() != flower.getLength()
+                    && flowers.get(i).getWeight() != flower.getWeight()
+                    && flowers.get(i).getPrice() != flower.getPrice())) {
+                temp.add(flowers.get(i));
             } else {
                 flag = true;
             }
@@ -58,13 +62,12 @@ public class Bouquet {
     }
 
     public void remove(int index) {
-        Flower[] temp = new Flower[flowers.length - 1];
+        ArrayList<Flower> temp = new ArrayList<>();
 
-        for (int i = 0, j = 0; i < flowers.length; i++) {
+        for (int i = 0; i < flowers.size(); i++) {
 
             if (index != i) {
-                temp[j] = flowers[i];
-                j++;
+                temp.add(flowers.get(i));
             }
         }
         flowers = temp;
