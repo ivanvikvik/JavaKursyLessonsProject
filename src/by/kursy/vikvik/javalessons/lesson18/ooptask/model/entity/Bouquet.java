@@ -49,10 +49,10 @@ public class Bouquet {
         for (int i = 0; i < flowers.size(); i++) {
 
             if (flag || (!flowers.get(i).getName().equals(flower.getName())
-                    && !flowers.get(i).getColor().equals(flower.getColor())
-                    && flowers.get(i).getLength() != flower.getLength()
-                    && flowers.get(i).getWeight() != flower.getWeight()
-                    && flowers.get(i).getPrice() != flower.getPrice())) {
+                    || !flowers.get(i).getColor().equals(flower.getColor())
+                    || flowers.get(i).getLength() != flower.getLength()
+                    || flowers.get(i).getWeight() != flower.getWeight()
+                    || flowers.get(i).getPrice() != flower.getPrice())) {
                 temp.add(flowers.get(i));
             } else {
                 flag = true;
