@@ -87,4 +87,3 @@ public class Flower {
                 + ", weight = " + weight + ", length = " + length;
     }
 }
-
