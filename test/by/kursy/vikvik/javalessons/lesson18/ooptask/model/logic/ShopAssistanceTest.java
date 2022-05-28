@@ -9,9 +9,9 @@ import static org.junit.Assert.*;
 
 public class ShopAssistanceTest {
 
-    private Bouquet bouquet;
+    private static final Bouquet bouquet;
 
-    {
+    static {
         Flower[] flowers = {
                 new Flower("Rose", "red", 3.0, 100, 100),
                 new Flower("Rose", "red", 3.0, 100, 130),
@@ -41,7 +41,7 @@ public class ShopAssistanceTest {
     @Test
     public void testCalculateTotalPriceWithEmptyObject() {
         Flower[] flowers = {};
-        bouquet = new Bouquet(flowers);
+        Bouquet bouquet = new Bouquet(flowers);
 
         double expected = 0;
 
@@ -67,7 +67,7 @@ public class ShopAssistanceTest {
     @Test
     public void testCalculateTotalWeightWithEmptyObject() {
         Flower[] flowers = {};
-        bouquet = new Bouquet(flowers);
+        Bouquet bouquet = new Bouquet(flowers);
         double expected = 0;
         double actual = ShopAssistance.calculateTotalWeight(bouquet);
         assertEquals(expected, actual, 0.0);
