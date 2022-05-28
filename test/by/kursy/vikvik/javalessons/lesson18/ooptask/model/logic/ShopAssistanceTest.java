@@ -2,16 +2,17 @@ package by.kursy.vikvik.javalessons.lesson18.ooptask.model.logic;
 
 import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Bouquet;
 import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Flower;
-import org.junit.Test;
+import org.junit.*;
 
 import static org.junit.Assert.*;
 
 
 public class ShopAssistanceTest {
 
-    private static final Bouquet bouquet;
+    private static Bouquet bouquet;
 
-    static {
+    @BeforeClass
+    public static void init(){
         Flower[] flowers = {
                 new Flower("Rose", "red", 3.0, 100, 100),
                 new Flower("Rose", "red", 3.0, 100, 130),
@@ -22,15 +23,45 @@ public class ShopAssistanceTest {
         bouquet = new Bouquet(flowers);
     }
 
+    @AfterClass
+    public static void destroy(){
+        bouquet = null;
+    }
+
+    @Before
+    public void connect(){
+        System.out.println("connect to Database...1");
+    }
+
+    @Before
+    public void connect1(){
+        System.out.println("connect to Database...2");
+    }
+
+    @Before
+    public void connect2(){
+        System.out.println("connect to Database...3");
+    }
+
+
+    @After
+    public void disconnect(){
+        System.out.println("disconnect from Database...");
+    }
+
     @Test
     public void testCalculateTotalPricePositive() {
+        // connect to Database
+        System.out.println("testCalculateTotalPricePositive");
         double expected = (ShopAssistance.LABOR_PERCENT + 1) * 15;
         double actual = ShopAssistance.calculateTotalPrice(bouquet);
         assertEquals(expected, actual, 0.01);
+        // disconnect from database
     }
 
     @Test
     public void testCalculateTotalPriceWithNull() {
+        System.out.println("testCalculateTotalPriceWithNull");
         double expected = 0;
 
         double actual = ShopAssistance.calculateTotalPrice(null);
@@ -40,7 +71,9 @@ public class ShopAssistanceTest {
 
     @Test
     public void testCalculateTotalPriceWithEmptyObject() {
+        System.out.println("testCalculateTotalPriceWithEmptyObject");
         Flower[] flowers = {};
+
         Bouquet bouquet = new Bouquet(flowers);
 
         double expected = 0;
@@ -52,6 +85,7 @@ public class ShopAssistanceTest {
 
     @Test
     public void testCalculateTotalWeightPositive() {
+        System.out.println("testCalculateTotalWeightPositive");
         double expected = 500;
         double actual = ShopAssistance.calculateTotalWeight(bouquet);
         assertEquals(expected, actual, 0.1);
@@ -59,6 +93,7 @@ public class ShopAssistanceTest {
 
     @Test
     public void testCalculateTotalWeightWithNull() {
+        System.out.println("testCalculateTotalWeightWithNull");
         double expected = 0;
         double actual = ShopAssistance.calculateTotalWeight(null);
         assertEquals(expected, actual, 0.0);
@@ -66,6 +101,7 @@ public class ShopAssistanceTest {
 
     @Test
     public void testCalculateTotalWeightWithEmptyObject() {
+        System.out.println("testCalculateTotalWeightWithEmptyObject");
         Flower[] flowers = {};
         Bouquet bouquet = new Bouquet(flowers);
         double expected = 0;
@@ -75,6 +111,7 @@ public class ShopAssistanceTest {
 
     @Test
     public void firstTestFindFlowersWithMaxLengthPositive() {
+        System.out.println("firstTestFindFlowersWithMaxLengthPositive");
         Flower[] expected = {new Flower("Rose", "red", 3.0, 100, 130)};
         Flower[] actual = ShopAssistance.findFlowersWithMaxLength(bouquet);
         //assertArrayEquals(expected, actual);
@@ -91,6 +128,7 @@ public class ShopAssistanceTest {
 
     @Test
     public void secondTestFindFlowersWithMaxLengthPositive() {
+        System.out.println("secondTestFindFlowersWithMaxLengthPositive");
         Flower[] expected = {new Flower("Rose", "red", 3.0, 100, 130)};
         Flower[] actual = ShopAssistance.findFlowersWithMaxLength(bouquet);
 
