@@ -20,11 +20,20 @@ public class Student {
         alive = true;
     }
 
-    public Student(String name, int age, double mark, boolean alive) {
+    public Student(String name, int age, boolean alive) {
         this.name = name;
         this.age = age;
-        note = new MarksNote(mark);
         this.alive = alive;
+    }
+
+    public Student(String name, int age, double mark, boolean alive) {
+        this(name, age, alive);
+        note = new MarksNote(mark);
+    }
+
+    public Student(String name, int age, MarksNote note, boolean alive) {
+        this(name, age, alive);
+        this.note = note;
     }
 
     public String getName() {
@@ -53,6 +62,14 @@ public class Student {
         if (mark >= MIN_MARK && mark <= MAX_MARK) {
             note.setMark(mark);
         }
+    }
+
+    public MarksNote getNote() {
+        return note;
+    }
+
+    public void setNote(MarksNote note) {
+        this.note = note;
     }
 
     public boolean isAlive() {
