@@ -13,6 +13,7 @@ public class ShopAssistanceTest {
 
     @BeforeClass
     public static void init(){
+        System.out.println("@BeforeClass");
         Flower[] flowers = {
                 new Flower("Rose", "red", 3.0, 100, 100),
                 new Flower("Rose", "red", 3.0, 100, 130),
@@ -25,6 +26,19 @@ public class ShopAssistanceTest {
 
     @AfterClass
     public static void destroy(){
+        System.out.println("@AfterClass");
+        bouquet = null;
+    }
+
+    @AfterClass
+    public static void destroy1(){
+        System.out.println("@AfterClass");
+        bouquet = null;
+    }
+
+    @AfterClass
+    public static void destroy2(){
+        System.out.println("@AfterClass");
         bouquet = null;
     }
 
