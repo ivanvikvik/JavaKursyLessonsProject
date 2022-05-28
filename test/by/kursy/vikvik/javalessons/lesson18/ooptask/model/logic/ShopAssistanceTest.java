@@ -44,16 +44,16 @@ public class ShopAssistanceTest {
 
     @Before
     public void connect(){
+        connect1();
+        connect2();
         System.out.println("connect to Database...1");
     }
 
-    @Before
-    public void connect1(){
+    private void connect1(){
         System.out.println("connect to Database...2");
     }
 
-    @Before
-    public void connect2(){
+    private void connect2(){
         System.out.println("connect to Database...3");
     }
 
