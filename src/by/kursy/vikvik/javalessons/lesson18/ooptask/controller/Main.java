@@ -1,9 +1,6 @@
 package by.kursy.vikvik.javalessons.lesson18.ooptask.controller;
 
-import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Bouquet;
-import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Chamomile;
-import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Flower;
-import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Rose;
+import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.*;
 import by.kursy.vikvik.javalessons.lesson18.ooptask.model.logic.ShopAssistance;
 
 public class Main {
@@ -18,7 +15,7 @@ public class Main {
             flowers[i] = new Chamomile("Pink Panther", "Pink", 3.5, 78, 70, 11);
         }
 
-        Bouquet bouquet = new Bouquet(flowers);
+        Bouquet2 bouquet = new Bouquet2(flowers);
         double totalWeight = ShopAssistance.calculateTotalWeight(bouquet);
         double totalPrice = ShopAssistance.calculateTotalPrice(bouquet);
 

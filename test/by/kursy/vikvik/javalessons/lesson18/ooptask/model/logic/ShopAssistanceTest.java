@@ -1,6 +1,7 @@
 package by.kursy.vikvik.javalessons.lesson18.ooptask.model.logic;
 
-import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Bouquet;
+import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Bouquet1;
+import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Bouquet2;
 import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Flower;
 import org.junit.*;
 
@@ -9,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class ShopAssistanceTest {
 
-    private static Bouquet bouquet;
+    private static Bouquet2 bouquet;
 
     @BeforeClass
     public static void init(){
@@ -21,7 +22,7 @@ public class ShopAssistanceTest {
                 new Flower("Rose", "red", 3.0, 100, 120),
                 new Flower("Rose", "red", 3.0, 100, 110),
         };
-        bouquet = new Bouquet(flowers);
+        bouquet = new Bouquet2(flowers);
     }
 
     @AfterClass
@@ -88,7 +89,7 @@ public class ShopAssistanceTest {
         System.out.println("testCalculateTotalPriceWithEmptyObject");
         Flower[] flowers = {};
 
-        Bouquet bouquet = new Bouquet(flowers);
+        Bouquet2 bouquet = new Bouquet2(flowers);
 
         double expected = 0;
 
@@ -117,7 +118,7 @@ public class ShopAssistanceTest {
     public void testCalculateTotalWeightWithEmptyObject() {
         System.out.println("testCalculateTotalWeightWithEmptyObject");
         Flower[] flowers = {};
-        Bouquet bouquet = new Bouquet(flowers);
+        Bouquet2 bouquet = new Bouquet2(flowers);
         double expected = 0;
         double actual = ShopAssistance.calculateTotalWeight(bouquet);
         assertEquals(expected, actual, 0.0);
