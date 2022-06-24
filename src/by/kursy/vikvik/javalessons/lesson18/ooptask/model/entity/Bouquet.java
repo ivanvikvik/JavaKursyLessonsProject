@@ -73,6 +73,16 @@ public class Bouquet {
         flowers = temp;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("List of flowers:");
+
+        for (Flower flower : flowers) {
+            builder.append("\n").append(flower);
+        }
+        return builder + "";
+    }
+
     //default constructor + constructor with params
     // add
     // remove
