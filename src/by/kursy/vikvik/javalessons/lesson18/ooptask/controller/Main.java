@@ -15,7 +15,7 @@ public class Main {
             flowers[i] = new Chamomile("Pink Panther", "Pink", 3.5, 78, 70, 11);
         }
 
-        Bouquet2 bouquet = new Bouquet2(flowers);
+        Bouquet3 bouquet = new Bouquet3(flowers);
         double totalWeight = ShopAssistance.calculateTotalWeight(bouquet);
         double totalPrice = ShopAssistance.calculateTotalPrice(bouquet);
 
