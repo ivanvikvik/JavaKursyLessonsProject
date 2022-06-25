@@ -7,7 +7,7 @@ class FlowerNode {
     public FlowerNode next;
 }
 
-public class SingleList implements Container {
+public class SingleList extends AbstractContainer {
     private FlowerNode first;
 
     public SingleList(){
@@ -26,10 +26,6 @@ public class SingleList implements Container {
 
         temp.value = flowers[flowers.length - 1];
         temp.next = null;
-    }
-
-    public boolean isEmpty() {
-        return size() == 0;
     }
 
     public int size(){

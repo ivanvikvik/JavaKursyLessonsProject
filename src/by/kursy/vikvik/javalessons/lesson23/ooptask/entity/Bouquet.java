@@ -11,12 +11,11 @@ public class Bouquet {
     }
 
     public Bouquet(Flower[] flowers) {
+        this();
         if (flowers != null) {
             for (int i = 0; i < flowers.length; i++) {
                 this.flowers.add(flowers[i]);
             }
-        } else {
-            flowers = new Flower[0];
         }
     }
 

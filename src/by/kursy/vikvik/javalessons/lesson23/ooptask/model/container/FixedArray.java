@@ -2,7 +2,7 @@ package by.kursy.vikvik.javalessons.lesson23.ooptask.model.container;
 
 import by.kursy.vikvik.javalessons.lesson23.ooptask.entity.Flower;
 
-public class FixedArray implements Container {
+public class FixedArray extends AbstractContainer {
     public static final int DEFAULT_SIZE = 10;
 
     private Flower[] flowers;
@@ -16,10 +16,6 @@ public class FixedArray implements Container {
     public FixedArray(Flower[] flowers) {
         this.flowers = flowers;
         current = flowers.length;
-    }
-
-    public boolean isEmpty() {
-        return size() == 0;
     }
 
     public int size() {

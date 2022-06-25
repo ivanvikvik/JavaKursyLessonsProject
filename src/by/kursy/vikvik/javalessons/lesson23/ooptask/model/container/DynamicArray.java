@@ -2,7 +2,7 @@ package by.kursy.vikvik.javalessons.lesson23.ooptask.model.container;
 
 import by.kursy.vikvik.javalessons.lesson23.ooptask.entity.Flower;
 
-public class DynamicArray implements Container {
+public class DynamicArray extends AbstractContainer {
     private Flower[] flowers;
 
     public DynamicArray() {
@@ -11,10 +11,6 @@ public class DynamicArray implements Container {
 
     public DynamicArray(Flower[] flowers) {
         this.flowers = flowers;
-    }
-
-    public boolean isEmpty(){
-        return size() == 0;
     }
 
     public int size(){
