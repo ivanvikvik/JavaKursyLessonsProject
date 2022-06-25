@@ -8,6 +8,8 @@ import by.kursy.vikvik.javalessons.lesson23.ooptask.model.container.FixedArray;
 import by.kursy.vikvik.javalessons.lesson23.ooptask.model.container.SingleList;
 import by.kursy.vikvik.javalessons.lesson23.ooptask.model.logic.FlowerSorter;
 import by.kursy.vikvik.javalessons.lesson23.ooptask.model.logic.ShopAssistance;
+import by.kursy.vikvik.javalessons.lesson23.ooptask.model.logic.TheStrategyPattern.SortFlowersByPriceAcs;
+import by.kursy.vikvik.javalessons.lesson23.ooptask.model.logic.TheStrategyPattern.SortFlowersByPriceDecs;
 
 import java.util.Random;
 
@@ -44,11 +46,11 @@ public class Main {
         System.out.println("Total weight: " + totalWeight);
 
         System.out.println("After sorting:");
-        FlowerSorter.bubbleSortByPriceAsc(bouquet);
+        FlowerSorter.bubbleSort(bouquet, new SortFlowersByPriceAcs());
         System.out.println(bouquet);
 
         System.out.println("After sorting:");
-        FlowerSorter.bubbleSortByPriceDesc(bouquet);
+        FlowerSorter.bubbleSort(bouquet, new SortFlowersByPriceDecs());
         System.out.println(bouquet);
 
     }
