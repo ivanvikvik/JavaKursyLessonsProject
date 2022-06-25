@@ -26,6 +26,11 @@ public class FixedArray extends AbstractContainer {
         return flowers[index];
     }
 
+    @Override
+    public void set(int index, Flower flower) {
+        flowers[index] = flower;
+    }
+
     public void add(Flower flower) {
         if (current < flowers.length) {
             flowers[current] = flower;

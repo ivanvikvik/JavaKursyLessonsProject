@@ -34,6 +34,10 @@ public class Bouquet {
         return null;
     }
 
+    public void set(int index, Flower flower) {
+        flowers.set(index, flower);
+    }
+
     public void add(Flower flower) {
         flowers.add(flower);
     }

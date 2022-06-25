@@ -58,6 +58,24 @@ public class SingleList extends AbstractContainer {
         return temp.value;
     }
 
+    @Override
+    public void set(int index, Flower flower) {
+        int count = 0;
+
+        FlowerNode temp = first;
+
+        while(temp != null){
+            if (index == count) {
+                break;
+            }
+
+            temp = temp.next;
+            count++;
+        }
+
+        temp.value = flower;
+    }
+
     public void add(Flower flower){
         FlowerNode temp = first;
 
