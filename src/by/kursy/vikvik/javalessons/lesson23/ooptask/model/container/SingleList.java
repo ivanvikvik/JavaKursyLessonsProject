@@ -29,6 +29,10 @@ public class SingleList extends AbstractContainer {
     }
 
     public int size(){
+        if (first.value == null) {
+           return 0;
+        }
+        
         int count = 0;
 
         FlowerNode temp = first;
@@ -93,24 +97,30 @@ public class SingleList extends AbstractContainer {
         temp.next = node;
     }
 
-    public void remove(int index) {
+   public void remove(int index) {
         int count = 0;
+
+        if (index == 0) {
+            first = first.next;
+            return;
+        }
 
         FlowerNode temp = first;
 
-        while(temp != null){
+        while (temp != null) {
             count++;
 
             if (index == count) {
-                FlowerNode prev = temp;
+            if (index - 1 == count) {
+                FlowerNode previous = temp;
                 temp = temp.next;
-                prev.next = temp;
+                previous.next = temp;
+                previous.next = temp.next;
                 break;
             }
 
             temp = temp.next;
+            count++;
         }
-
     }
-
 }
