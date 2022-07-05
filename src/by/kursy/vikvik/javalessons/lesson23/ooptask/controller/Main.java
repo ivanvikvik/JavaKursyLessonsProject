@@ -26,13 +26,13 @@ public class Main {
         Random random = new Random();
 
         for (int i = 0; i < 5; i++) {
-            double price = random.nextDouble() * (MAX_PRICE - MIN_PRICE);
+            double price = random.nextDouble() * (MAX_PRICE - MIN_PRICE) + MIN_PRICE;
             price = Double.parseDouble(String.format("%.2f", price));
             flowers[i] = new Rose("Pink Panther", "Pink", price, 78, 200, 1.5);
         }
 
         for (int i = 5; i < flowers.length; i++) {
-            double price = random.nextDouble() * (MAX_PRICE - MIN_PRICE);
+            double price = random.nextDouble() * (MAX_PRICE - MIN_PRICE) + MIN_PRICE;
             price = Double.parseDouble(String.format("%.2f", price));
             flowers[i] = new Chamomile("Pink Panther", "Pink", price, 78, 70, 11);
         }
