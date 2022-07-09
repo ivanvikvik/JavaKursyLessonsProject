@@ -1,20 +1,20 @@
 package by.kursy.vikvik.javalessons.lesson25.model;
 
 public class Box {
-    private int value;
+    private Object value;
 
     public Box() {
     }
 
-    public Box(int value) {
+    public Box(Object value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public Object getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 
