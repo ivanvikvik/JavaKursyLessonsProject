@@ -2,6 +2,8 @@ package by.kursy.vikvik.javalessons.lesson25.controller;
 
 import by.kursy.vikvik.javalessons.lesson25.model.*;
 
+import java.util.ArrayList;
+
 class A {
 
 }
@@ -48,12 +50,19 @@ public class Main {
 //
 //        System.out.println(box);
 
-        GBox<Integer> ibox = new GBox<>();
-        ibox.setValue("This is string");
+//        GBox<Integer> ibox = new GBox<>();
+//        ibox.setValue("This is string");
+//
+//        GBox<String> sbox = new GBox<>();
+//        sbox.setValue(10);
 
-        GBox<String> sbox = new GBox<>();
-        sbox.setValue(10);
+        ArrayList<Student> list = new ArrayList<>();
 
+
+        GBox box = new GBox();
+
+        SuperMath superMath = new SuperMath();
+        System.out.println(superMath.<Integer, String>sum(5, "skdnlkdsmf"));
 
     }
 }
