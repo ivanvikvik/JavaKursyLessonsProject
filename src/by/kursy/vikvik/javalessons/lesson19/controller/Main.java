@@ -1,4 +1,4 @@
-package by.kursy.vikvik.javalessons.lesson20.controller;
+package by.kursy.vikvik.javalessons.lesson19.controller;
 
 import by.kursy.vikvik.javalessons.lesson20.model.entity.abstracts.Figure;
 import by.kursy.vikvik.javalessons.lesson20.model.entity.figures.Point;
