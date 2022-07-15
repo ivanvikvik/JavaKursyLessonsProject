@@ -6,7 +6,6 @@ public class CustomCollection implements Iterable<Integer> {
     private Collection<Integer> integers;
 
     public CustomCollection() {
-        Queue
         integers = new ArrayList<>();
     }
 

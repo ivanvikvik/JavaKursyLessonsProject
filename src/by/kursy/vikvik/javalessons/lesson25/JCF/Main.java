@@ -17,10 +17,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        first();
-        ArrayList list = new ArrayList();
-        LinkedList list = new LinkedList();
-        HashSet list = new HashSet();
+//        first();
+//        ArrayList list = new ArrayList();
+//        LinkedList list = new LinkedList();
+//        HashSet list = new HashSet();
         //PriorityQueue<String> list = new PriorityQueue<>();
 //        TreeSet list = new TreeSet();
 //
