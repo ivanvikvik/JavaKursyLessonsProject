@@ -2,12 +2,19 @@ package by.kursy.vikvik.javalessons.lesson18.ooptask.controller;
 
 import by.kursy.vikvik.javalessons.lesson18.ooptask.model.container.SingleList;
 import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.*;
+import by.kursy.vikvik.javalessons.lesson18.ooptask.model.exception.TechnicalFlowerException;
 import by.kursy.vikvik.javalessons.lesson18.ooptask.model.logic.ShopAssistance;
 
 public class Main {
     public static void main(String[] args) {
         SingleList list = new SingleList();
         list.add(new Flower());
+
+        TechnicalFlowerException exception;
+
+        Exception exc1 = exception.getCause();
+        Exception exc2 = exc1.getCause();
+
 
         System.out.println(list.get(0));
 
