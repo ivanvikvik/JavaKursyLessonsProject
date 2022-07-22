@@ -9,11 +9,11 @@ public class Main {
     public static void main(String[] args) {
         SingleList list = new SingleList();
         list.add(new Flower());
-
-        TechnicalFlowerException exception;
-
-        Exception exc1 = exception.getCause();
-        Exception exc2 = exc1.getCause();
+//
+//        TechnicalFlowerException exception;
+//
+//        Exception exc1 = exception.getCause();
+//        Exception exc2 = exc1.getCause();
 
 
         System.out.println(list.get(0));
