@@ -12,5 +12,7 @@ public class Main {
 
         CharWorker.write(fileName);
         System.out.println(CharWorker.read(fileName));
+
+        // & | ^ ~ << >> >>>
     }
 }
