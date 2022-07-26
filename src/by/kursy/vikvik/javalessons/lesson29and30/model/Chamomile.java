@@ -1,7 +1,5 @@
 package by.kursy.vikvik.javalessons.lesson29and30.model;
 
-import by.kursy.vikvik.javalessons.lesson23.ooptask.entity.Flower;
-
 public class Chamomile extends Flower {
     private int petalCount;
 

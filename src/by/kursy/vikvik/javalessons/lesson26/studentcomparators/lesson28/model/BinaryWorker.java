@@ -1,4 +1,4 @@
-package by.kursy.vikvik.javalessons.lesson28.model;
+package by.kursy.vikvik.javalessons.lesson26.studentcomparators.lesson28.model;
 
 import java.io.*;
 

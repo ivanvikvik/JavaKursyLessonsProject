@@ -1,7 +1,6 @@
-package by.kursy.vikvik.javalessons.lesson28.controller;
+package by.kursy.vikvik.javalessons.lesson26.studentcomparators.lesson28.controller;
 
-import by.kursy.vikvik.javalessons.lesson28.model.BinaryWorker;
-import by.kursy.vikvik.javalessons.lesson28.model.CharWorker;
+import by.kursy.vikvik.javalessons.lesson26.studentcomparators.lesson28.model.CharWorker;
 
 public class Main {
     public static void main(String[] args) {
