@@ -1,4 +1,4 @@
-package by.kursy.vikvik.javalessons.lesson29.model;
+package by.kursy.vikvik.javalessons.lesson29and30.model;
 
 import java.io.*;
 

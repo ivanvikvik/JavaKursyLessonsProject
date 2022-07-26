@@ -1,7 +1,7 @@
-package by.kursy.vikvik.javalessons.lesson29.util;
+package by.kursy.vikvik.javalessons.lesson29and30.util;
 
-import by.kursy.vikvik.javalessons.lesson29.model.Bouquet;
-import by.kursy.vikvik.javalessons.lesson29.model.Flower;
+import by.kursy.vikvik.javalessons.lesson29and30.model.Bouquet;
+import by.kursy.vikvik.javalessons.lesson29and30.model.Flower;
 
 import java.io.*;
 
@@ -69,7 +69,7 @@ public class FlowerBinaryParser {
                     stream.close();
                 }
             } catch (IOException exception) {
-                System.out.println(exception);
+                System.err.println(exception);
             }
         }
     }

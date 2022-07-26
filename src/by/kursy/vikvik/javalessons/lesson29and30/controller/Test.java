@@ -1,14 +1,14 @@
-package by.kursy.vikvik.javalessons.lesson29.controller;
+package by.kursy.vikvik.javalessons.lesson29and30.controller;
 
-import by.kursy.vikvik.javalessons.lesson29.model.Bouquet;
-import by.kursy.vikvik.javalessons.lesson29.model.Flower;
-import by.kursy.vikvik.javalessons.lesson29.model.NumberParser;
-import by.kursy.vikvik.javalessons.lesson29.util.FlowerBinaryParser;
-
-import java.util.Scanner;
+import by.kursy.vikvik.javalessons.lesson29and30.model.Bouquet;
+import by.kursy.vikvik.javalessons.lesson29and30.model.Flower;
+import by.kursy.vikvik.javalessons.lesson29and30.util.FlowerBinaryParser;
+import by.kursy.vikvik.javalessons.lesson29and30.util.FlowerCharParser;
 
 public class Test {
     public static void main(String[] args) {
+
+
 
         //int number = Integer.MAX_VALUE;
         //NumberParser.writeIntegerNumber(number);
@@ -23,7 +23,7 @@ public class Test {
 //
 //        System.out.println(FlowerBinaryParser.readFlower(fileName));
 
-        String fileName = "c:/test/bouquet.bin";
+//        String fileName = "c:/test/bouquet.bin";
         Bouquet bouquet = new Bouquet();
         bouquet.add(new Flower("Rose", "White", 5.5, 0.3, 150));
         bouquet.add(new Flower("Rose", "White", 5.5, 0.3, 150));
@@ -54,7 +54,13 @@ public class Test {
         bouquet.add(new Flower("Rose", "White", 5.5, 0.3, 150));
         bouquet.add(new Flower("Rose", "White", 5.5, 0.3, 150));
 
-        FlowerBinaryParser.writeBouquet(fileName, bouquet);
+        String fileName = "c:/test/bouquet.txt";
+
+       // FlowerCharParser.writeBouquet(fileName, bouquet);
+
+        System.out.println(FlowerCharParser.readBouquet(fileName));
+
+//        FlowerBinaryParser.writeBouquet(fileName, bouquet);
 
 //        System.out.println(FlowerBinaryParser.readBouquet(fileName));
 
