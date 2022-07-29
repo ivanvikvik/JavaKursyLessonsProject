@@ -7,11 +7,10 @@ import by.kursy.vikvik.javalessons.lesson29and30.model.Rose;
 import by.kursy.vikvik.javalessons.lesson29and30.util.BouquetParser;
 import by.kursy.vikvik.javalessons.lesson29and30.util.FlowerBinaryParser;
 import by.kursy.vikvik.javalessons.lesson29and30.util.FlowerCharParser;
+import by.kursy.vikvik.javalessons.lesson29and30.util.Serializer;
 
 public class Test {
     public static void main(String[] args) {
-
-
         //int number = Integer.MAX_VALUE;
         //NumberParser.writeIntegerNumber(number);
 //        System.out.println(Integer.MAX_VALUE);
@@ -43,11 +42,17 @@ public class Test {
         bouquet.add(new Chamomile("Simple", "White", 2.0, 0.05, 30, 17));
         bouquet.add(new Chamomile("Simple", "White", 2.0, 0.05, 30, 17));
 
-        String fileName = "c:/test/bouquet.txt";
+//        String fileName = "c:/test/bouquet.txt";
 
       // BouquetParser.writeBouquet(fileName, bouquet);
 
-        System.out.println(BouquetParser.readBouquet(fileName));
+        Serializer<Bouquet> serializer = new Serializer<>();
+        serializer.setFile("c:/test/bouquet.bin");
+        serializer.serialize(bouquet);
+
+        System.out.println(serializer.deserialize());
+
+//        System.out.println(BouquetParser.readBouquet(fileName));
 
 //         FlowerCharParser.writeBouquet(fileName, bouquet);
 

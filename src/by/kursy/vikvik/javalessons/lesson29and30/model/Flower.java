@@ -1,6 +1,10 @@
 package by.kursy.vikvik.javalessons.lesson29and30.model;
 
-public class Flower {
+import java.io.Serializable;
+
+public class Flower implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String name;
     private String color;
     private double price;
