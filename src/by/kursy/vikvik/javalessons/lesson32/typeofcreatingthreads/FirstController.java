@@ -1,11 +1,13 @@
 package by.kursy.vikvik.javalessons.lesson32.typeofcreatingthreads;
 
-public class Controller {
+public class FirstController {
     public static void main(String[] args) {
         FirstThread thread1 = new FirstThread();
         FirstThread thread2 = new FirstThread();
         FirstThread thread3 = new FirstThread();
         FirstThread thread4 = new FirstThread();
+
+//        thread1.run();
 
         thread1.start();
         thread2.start();
