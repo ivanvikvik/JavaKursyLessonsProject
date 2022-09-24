@@ -1,4 +1,4 @@
-package by.kursy.vikvik.javalessons.lesson32.typeofcreatingthreads;
+package by.kursy.vikvik.javalessons.lesson32.typeofcreatingthreads.model;
 
 public class FirstThread extends Thread {
     @Override
