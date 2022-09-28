@@ -3,12 +3,12 @@ package by.kursy.vikvik.javalessons.lesson33.model;
 public class Writer implements Runnable {
     private Thread thread;
     private String text;
-    //private Printer printer;
+    private Printer printer;
 
-    public Writer(String text){//}, Printer printer){
+    public Writer(String text, Printer printer){
         thread = new Thread(this);
         this.text = text;
-        //this.printer = printer;
+        this.printer = printer;
         thread.start();
     }
 
@@ -18,8 +18,8 @@ public class Writer implements Runnable {
 
     @Override
     public void run() {
-        synchronized (Printer.class) {
-            Printer.print(text);
+        synchronized (printer) {
+            printer.print(text);
         }
     }
 }

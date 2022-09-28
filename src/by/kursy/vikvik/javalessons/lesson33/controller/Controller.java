@@ -12,8 +12,8 @@ public class Controller {
         String[] texts = {"first", "second", "third", "fourth", "fifth"};
 
         for (int i = 0; i < writers.length; i++) {
-//            writers[i] = new Writer(texts[i], printer);
-            writers[i] = new Writer(texts[i]);
+            writers[i] = new Writer(texts[i], printer);
+           // writers[i] = new Writer(texts[i]);
         }
 
         try {
