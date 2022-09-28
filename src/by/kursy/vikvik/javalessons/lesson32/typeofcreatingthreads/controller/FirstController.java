@@ -1,4 +1,6 @@
-package by.kursy.vikvik.javalessons.lesson32.typeofcreatingthreads;
+package by.kursy.vikvik.javalessons.lesson32.typeofcreatingthreads.controller;
+
+import by.kursy.vikvik.javalessons.lesson32.typeofcreatingthreads.model.FirstThread;
 
 public class FirstController {
     public static void main(String[] args) {
@@ -28,3 +30,4 @@ public class FirstController {
         }
     }
 }
+
