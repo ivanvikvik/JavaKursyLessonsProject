@@ -3,7 +3,7 @@ package by.kursy.vikvik.javalessons.lesson33.model;
 import java.util.concurrent.TimeUnit;
 
 public class Printer {
-    public synchronized void print(String text) {
+    public static void print(String text) {
         System.out.print("[");
 
         try {
