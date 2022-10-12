@@ -20,12 +20,6 @@ public class Producer implements Runnable {
         while(running){
             product++;
             marker.send(product);
-
-            try {
-                TimeUnit.MILLISECONDS.sleep(100);
-            } catch (InterruptedException exception) {
-                System.out.println(exception);
-            }
         }
 
     }

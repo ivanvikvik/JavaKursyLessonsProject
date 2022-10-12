@@ -18,11 +18,6 @@ public class Consumer implements Runnable {
     public void run() {
         while (running) {
             marker.get();
-            try {
-                TimeUnit.MILLISECONDS.sleep(100);
-            } catch (InterruptedException exception) {
-                System.out.println(exception);
-            }
         }
     }
 
