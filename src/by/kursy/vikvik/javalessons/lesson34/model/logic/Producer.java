@@ -2,6 +2,8 @@ package by.kursy.vikvik.javalessons.lesson34.model.logic;
 
 import by.kursy.vikvik.javalessons.lesson34.model.entity.Marker;
 
+import java.util.concurrent.TimeUnit;
+
 public class Producer implements Runnable {
     private boolean running;
     private Marker marker;
@@ -18,6 +20,12 @@ public class Producer implements Runnable {
         while(running){
             product++;
             marker.send(product);
+
+            try {
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException exception) {
+                System.out.println(exception);
+            }
         }
 
     }
