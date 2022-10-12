@@ -8,19 +8,22 @@ public class Marker {
         empty = true;
     }
 
+    public synchronized boolean isEmpty() {
+        return empty;
+    }
+
+    public synchronized void setEmpty(boolean empty) {
+        this.empty = empty;
+    }
+
     public synchronized void send(int product) {
-        if (empty) {
-            this.product = product;
-            System.out.println("Producer sends --> " + product); // debug
-            empty = false;
-        }
+        this.product = product;
+        System.out.println("Producer sends --> " + product); // debug
+
     }
 
     public synchronized int get() {
-        if (!empty) {
-            System.out.println("Consumer gets <-- " + product); // debug
-            empty = true;
-        }
+        System.out.println("Consumer gets <-- " + product); // debug
         return product;
     }
 }

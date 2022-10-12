@@ -18,8 +18,11 @@ public class Producer implements Runnable {
     public void run() {
         int product = 0;
         while(running){
-            product++;
-            marker.send(product);
+            if (marker.isEmpty()) {
+                product++;
+                marker.send(product);
+                marker.setEmpty(false);
+            }
         }
 
     }

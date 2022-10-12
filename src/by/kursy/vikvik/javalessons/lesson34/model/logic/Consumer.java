@@ -17,7 +17,10 @@ public class Consumer implements Runnable {
     @Override
     public void run() {
         while (running) {
-            marker.get();
+            if (!marker.isEmpty()) {
+                marker.get();
+                marker.setEmpty(true);
+            }
         }
     }
 
