@@ -1,5 +1,6 @@
 package by.kursy.vikvik.javalessons.lesson33.controller;
 
+import by.kursy.vikvik.javalessons.lesson18.ooptask.model.entity.Flower;
 import by.kursy.vikvik.javalessons.lesson33.model.Printer;
 import by.kursy.vikvik.javalessons.lesson33.model.Writer;
 
@@ -13,16 +14,6 @@ public class Controller {
 
         for (int i = 0; i < writers.length; i++) {
             writers[i] = new Writer(texts[i], printer);
-           // writers[i] = new Writer(texts[i]);
         }
-
-        try {
-            for (int i = 0; i < writers.length; i++) {
-                writers[i].getThread().join();
-            }
-        } catch (InterruptedException exception) {
-            System.out.println(exception);
-        }
-
     }
 }

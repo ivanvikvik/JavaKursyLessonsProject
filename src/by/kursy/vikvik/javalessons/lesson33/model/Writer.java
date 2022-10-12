@@ -5,21 +5,22 @@ public class Writer implements Runnable {
     private String text;
     private Printer printer;
 
-    public Writer(String text, Printer printer){
+    public Writer(String text, Printer printer) {
         thread = new Thread(this);
         this.text = text;
         this.printer = printer;
         thread.start();
     }
 
-    public Thread getThread(){
+    public Thread getThread() {
         return thread;
     }
 
     @Override
     public void run() {
-        synchronized (printer) {
+       // synchronized (object) {
             printer.print(text);
-        }
+        //}
+
     }
 }
