@@ -12,31 +12,27 @@ public class Printer {
         lock = new ReentrantLock();
     }
 
-    public void print(String text) {
+    public Lock getLock(){
+        return lock;
+    }
 
-        lock.lock();
+    public void print(String text) {
+        System.out.print("[");
 
         try {
-            System.out.print("[");
 
-            try {
+            TimeUnit.MILLISECONDS.sleep(100);
 
+            for (int i = 0; i < text.length(); i++) {
+                System.out.print(text.charAt(i));
                 TimeUnit.MILLISECONDS.sleep(100);
-
-                for (int i = 0; i < text.length(); i++) {
-                    System.out.print(text.charAt(i));
-                    TimeUnit.MILLISECONDS.sleep(100);
-                }
-
-                TimeUnit.MILLISECONDS.sleep(100);
-
-            } catch (InterruptedException exception) {
-                System.out.println(exception);
             }
-            System.out.println("]");
-        } finally {
-            lock.unlock();
-        }
 
+            TimeUnit.MILLISECONDS.sleep(100);
+
+        } catch (InterruptedException exception) {
+            System.out.println(exception);
+        }
+        System.out.println("]");
     }
 }
