@@ -12,5 +12,8 @@ public class Main {
         new Producer(marker);
         TimeUnit.MILLISECONDS.sleep(10);
         new Consumer(marker);
+
+        Object o = new Object();
+
     }
 }
