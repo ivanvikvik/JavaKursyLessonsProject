@@ -1,14 +1,12 @@
 package by.kursy.vikvik.javalessons.lesson34.model.logic;
 
-import by.kursy.vikvik.javalessons.lesson34.model.entity.Marker;
-
-import java.util.concurrent.TimeUnit;
+import by.kursy.vikvik.javalessons.lesson34.model.entity.Market;
 
 public class Producer implements Runnable {
     private boolean running;
-    private Marker marker;
+    private Market marker;
 
-    public Producer(Marker marker){
+    public Producer(Market marker) {
         this.marker = marker;
         running = true;
         new Thread(this, "Producer").start();
@@ -17,17 +15,14 @@ public class Producer implements Runnable {
     @Override
     public void run() {
         int product = 0;
-        while(running){
-            if (marker.isEmpty()) {
-                product++;
-                marker.send(product);
-                marker.setEmpty(false);
-            }
+        while (running) {
+            product++;
+            marker.send(product);
         }
-
     }
 
-    public void stop(){
+
+    public void stop() {
         running = false;
     }
 }

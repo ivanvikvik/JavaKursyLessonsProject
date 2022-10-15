@@ -1,14 +1,13 @@
 package by.kursy.vikvik.javalessons.lesson34.model.logic;
 
-import by.kursy.vikvik.javalessons.lesson34.model.entity.Marker;
-
-import java.util.concurrent.TimeUnit;
+import by.kursy.vikvik.javalessons.lesson34.model.entity.Market;
 
 public class Consumer implements Runnable {
     private boolean running;
-    private Marker marker;
+    private Market marker;
 
-    public Consumer(Marker marker) {
+
+    public Consumer(Market marker) {
         this.marker = marker;
         running = true;
         new Thread(this, "Consumer").start();
@@ -17,10 +16,7 @@ public class Consumer implements Runnable {
     @Override
     public void run() {
         while (running) {
-            if (!marker.isEmpty()) {
-                marker.get();
-                marker.setEmpty(true);
-            }
+            marker.get();
         }
     }
 
