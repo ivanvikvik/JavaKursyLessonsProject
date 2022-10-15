@@ -10,9 +10,6 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         Market market = new Market();
         new Producer(market);
-
-        TimeUnit.MILLISECONDS.sleep(10);
-
         new Consumer(market);
 
     }

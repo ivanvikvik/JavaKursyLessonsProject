@@ -1,48 +1,32 @@
 package by.kursy.vikvik.javalessons.lesson34.model.entity;
 
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
 public class Market extends Object {
-    private int product;
-    private boolean empty;
+    private BlockingQueue<Integer> queue;
 
     public Market() {
-        empty = true;
+        queue = new ArrayBlockingQueue<>(1);
     }
 
-    public synchronized boolean isEmpty() {
-        return empty;
-    }
-
-    public synchronized void setEmpty(boolean empty) {
-        this.empty = empty;
-    }
-
-    public synchronized void send(int product) {
-        if (!empty) {
-            try {
-                wait();
-            } catch (InterruptedException exception) {
-                System.err.println(exception);
-            }
+    public void send(int product) {
+        try {
+            queue.put(product);
+            System.out.println("Producer sends --> " + product); // debug
+        } catch (InterruptedException exception) {
+            System.err.println(exception);
         }
-
-        this.product = product;
-        System.out.println("Producer sends --> " + product); // debug
-        empty = false;
-        notify();
     }
 
-    public synchronized int get() {
-        if (empty){
-            try {
-                wait();
-            } catch (InterruptedException exception) {
-                System.err.println(exception);
-            }
+    public int get() {
+        int product = 0;
+        try {
+            product = queue.take();
+            System.out.println("Consumer gets <-- " + product); // debug
+        } catch (InterruptedException exception) {
+            System.err.println(exception);
         }
-
-        System.out.println("Consumer gets <-- " + product); // debug
-        empty = true;
-        notify();
         return product;
     }
 }
