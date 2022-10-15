@@ -5,11 +5,13 @@ import by.kursy.vikvik.javalessons.lesson34.model.entity.Market;
 public class Producer implements Runnable {
     private boolean running;
     private Market marker;
+    private String name;
 
-    public Producer(Market marker) {
+    public Producer(Market marker, String name) {
         this.marker = marker;
         running = true;
-        new Thread(this, "Producer").start();
+        this.name = name;
+        new Thread(this, name).start();
     }
 
     @Override
@@ -17,7 +19,7 @@ public class Producer implements Runnable {
         int product = 0;
         while (running) {
             product++;
-            marker.send(product);
+            marker.send(product, name);
         }
     }
 

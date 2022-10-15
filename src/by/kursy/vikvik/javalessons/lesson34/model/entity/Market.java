@@ -7,23 +7,23 @@ public class Market extends Object {
     private BlockingQueue<Integer> queue;
 
     public Market() {
-        queue = new ArrayBlockingQueue<>(1);
+        queue = new ArrayBlockingQueue<>(2);
     }
 
-    public void send(int product) {
+    public void send(int product, String name) {
         try {
             queue.put(product);
-            System.out.println("Producer sends --> " + product); // debug
+            System.out.printf("Producer %s sends --> %d\n", name, product); // debug
         } catch (InterruptedException exception) {
             System.err.println(exception);
         }
     }
 
-    public int get() {
+    public int get(String name) {
         int product = 0;
         try {
             product = queue.take();
-            System.out.println("Consumer gets <-- " + product); // debug
+            System.out.printf("Consumer %s gets <-- %d\n", name, product); // debug
         } catch (InterruptedException exception) {
             System.err.println(exception);
         }
